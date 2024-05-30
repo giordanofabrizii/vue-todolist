@@ -38,7 +38,7 @@ createApp ({
         addTask: function() {
             if (this.newContent.length > 0) {
                 let newTask = {text: this.newContent, done: false};
-                this.tasks.push(newTask);
+                this.tasks.unshift(newTask);
                 this.newContent = ''
             } else {
                 console.warn('No text to add');
