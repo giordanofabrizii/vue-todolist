@@ -10,7 +10,7 @@
     align-items: center;
     margin: 1rem auto;
     padding: 1rem;
-    background-color: rgb(0, 110, 255);
+    background-color: rgb(183, 0, 255);
     width: 50rem;
     border-radius: .6rem;
 }
@@ -29,16 +29,27 @@ li {
     margin: .2rem;
     padding: .5rem;
     border: 1px solid white;
-    background-color: rgb(255, 230, 86);
+    background-color: rgb(255, 182, 86);
     border-radius: .4rem;
 }
 
+li > h2{
+    width: 80%;
+    overflow: scroll;
+}
+
 li.done {
-    background-color: rgb(172, 252, 199);
+    background-color: rgb(250, 236, 108);
 }
 
 li > h2.done {
     text-decoration: line-through;
+}
+
+li > input {
+    border-radius: .3rem;
+    border: none;
+    padding: .3rem;
 }
 
 #options > i{
@@ -81,8 +92,25 @@ li > h2.done {
 }
 
 .inputs > button {
-    background-color: rgb(255, 230, 86);
+    background-color: rgb(255, 182, 86);
     border: none;
     border-radius: .3rem;
     padding: .2rem;
+}
+
+.tips {
+    width: 50rem;
+    margin: 0 auto;
+}
+
+a {
+    color: black;
+}
+
+h4 > i {
+    color: red;
+}
+
+p > i{
+    margin: 0 .2rem;
 }
