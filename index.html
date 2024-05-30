@@ -17,7 +17,7 @@
     <div id="app">
         <div class="container">
             <h1>Todo List</h1>
-            <ul>
+            <ul v-if="tasks.length > 0">
                 <li v-for="(task, index) in tasks" :class="task.done === true ? 'done' : ''">
                     <h2 :class="{'done': task.done, 'notShow': task.edit}" @click="switchStatus(index)" @contextmenu="showEdit(index)">
                         {{ task.text }}
@@ -28,6 +28,7 @@
                     </section>
                 </li>
             </ul>
+            <p v-else>No tasks here, add a new one</p>
             <section id="newTask">
                 <h3>Do you want to add a task?</h3>
                 <div class="inputs">
