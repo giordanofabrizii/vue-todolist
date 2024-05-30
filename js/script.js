@@ -6,22 +6,27 @@ createApp ({
             tasks : [
                 {
                     text: 'Fare la spesa',
-                    done: false
+                    done: false,
+                    edit: false
                 },
                 {
                     text: 'Portare il cane',
-                    done: false 
+                    done: false,
+                    edit: false
                 },
                 {
                     text: 'Fare i bonus',
-                    done: false 
+                    done: false,
+                    edit: false
                 },
                 {
                     text: 'Pulire la macchina',
-                    done: false 
+                    done: false,
+                    edit: false
                 }
             ],
-            newContent: ''
+            newContent: '',
+            editContent: ''
         }
     },
     methods: {
@@ -39,6 +44,14 @@ createApp ({
         },
         switchStatus: function(index){
             this.tasks[index].done = this.tasks[index].done == false ? true : false;
+        },
+        editTask: function(index){
+            this.tasks[index].text = this.editContent;
+            this.editContent='';
+            this.tasks[index].edit = false;
+        },
+        showEdit: function(index){
+            this.tasks[index].edit = true;
         }
     }
 }).mount('#app')

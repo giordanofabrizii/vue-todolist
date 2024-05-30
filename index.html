@@ -18,8 +18,14 @@
         <div class="container">
             <ul>
                 <li v-for="(task, index) in tasks">
-                    <h2 :class="task.done === true ? 'done' : ''" @click="switchStatus(index)">{{ task.text }}</h2>
-                    <i class="fa-solid fa-toilet" @click="eliminateTask(index)"></i>
+                    <h2 :class="{'done': task.done, 'notShow': task.edit}" @click="switchStatus(index)">
+                        {{ task.text }}
+                    </h2>
+                    <input type="text" :class="task.edit === true ? 'show' : 'notShow'" @keyup.enter="editTask(index)" v-model="editContent">
+                    <section class="options">
+                        <i class="fa-solid fa-pen" @click="showEdit(index)"></i>
+                        <i class="fa-solid fa-toilet" @click="eliminateTask(index)"></i>
+                    </section>
                 </li>
             </ul>
             <section>

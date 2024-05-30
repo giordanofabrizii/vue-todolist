@@ -14,3 +14,11 @@ li {
 li > .done {
     text-decoration: line-through;
 }
+
+.show {
+    display: inline-block;
+}
+
+.notShow {
+    display: none;
+}
