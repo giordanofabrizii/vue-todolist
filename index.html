@@ -16,21 +16,24 @@
     
     <div id="app">
         <div class="container">
+            <h1>Todo List</h1>
             <ul>
                 <li v-for="(task, index) in tasks">
-                    <h2 :class="{'done': task.done, 'notShow': task.edit}" @click="switchStatus(index)">
+                    <h2 :class="{'done': task.done, 'notShow': task.edit}" @click="switchStatus(index)" @contextmenu="showEdit(index)">
                         {{ task.text }}
                     </h2>
                     <input type="text" :class="task.edit === true ? 'show' : 'notShow'" @keyup.enter="editTask(index)" v-model="editContent">
-                    <section class="options">
-                        <i class="fa-solid fa-pen" @click="showEdit(index)"></i>
+                    <section id="options">
                         <i class="fa-solid fa-toilet" @click="eliminateTask(index)"></i>
                     </section>
                 </li>
             </ul>
-            <section>
-                <input type="text" v-model="newContent"  @keyup.enter="addTask">
-                <button @click="addTask">Aggiungi task</button>
+            <section id="newTask">
+                <h3>Do you want to add a task?</h3>
+                <div class="inputs">
+                    <input type="text" v-model="newContent"  @keyup.enter="addTask" placeholder="Write here the task">
+                    <button @click="addTask">Add</button>
+                </div>
             </section>
         </div>
     </div>

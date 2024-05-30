@@ -4,15 +4,47 @@
     padding: 0;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: rgb(0, 110, 255);
+    width: 50rem;
+    border-radius: .6rem;
+}
+
+h1{
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+
 li {
     display: flex;
     align-items: center;
-    width: 20rem;
     justify-content: space-between;
+    width: 20rem;
+    margin: .2rem;
+    padding: .5rem;
+    border: 1px solid white;
+    background-color: rgb(255, 230, 86);
+    border-radius: .4rem;
 }
 
 li > .done {
     text-decoration: line-through;
+}
+
+#options > i{
+    font-size: .8rem;
+    padding: .4rem;
+}
+
+#options > i:hover{
+    font-size: 1.1rem;
+    padding: .2rem .26rem;
 }
 
 .show {
@@ -21,4 +53,32 @@ li > .done {
 
 .notShow {
     display: none;
+}
+
+#newTask {
+    margin-top: 1rem;
+}
+
+#newTask > h3 {
+    font-weight: normal;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    margin-top: .4rem;
+}
+
+.inputs > input{
+    padding: .3rem;
+    border-radius: .3rem;
+    border: none;
+    margin-right: .2rem;
+}
+
+.inputs > button {
+    background-color: rgb(255, 230, 86);
+    border: none;
+    border-radius: .3rem;
+    padding: .2rem;
 }
