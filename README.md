@@ -9,3 +9,18 @@ Rifare l'esercizio della to do list visto insieme a lezione. Ogni oggetto dovra'
  Bonus:
  1 - cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
  2 -  aggiungere un altro bottone che permetta la modifica di un task gia' esistente
+
+
+<!-- PROCEDIMENTO -->
+Realizzare nell HTML una lista non ordinata
+    Creare un li per ogni elemento della lista tasks
+        aggiungere il testo dell'elemento
+        aggiungere un icona per eliminare poi la task
+    
+Aggiungere un metodo per eliminare la task
+    prende index e elimina dalla lista
+
+Funzione per cambiare lo status della task in done
+
+Funzione per modificare il testo di una task
+    Appare un input per cambiare il testo e modifica la task
