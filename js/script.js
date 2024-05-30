@@ -41,15 +41,22 @@ createApp ({
                 this.tasks.push(newTask);
                 this.newContent = ''
             } else {
-                console.warn('No text to add')
+                console.warn('No text to add');
             }
         },
         switchStatus: function(index){
             this.tasks[index].done = this.tasks[index].done == false ? true : false;
+            if (this.tasks[index].done == true) {
+                this.tasks.splice(this.tasks.length - 1, 0, this.tasks.splice(index, 1)[0]);
+            } else {
+                this.tasks.splice(0, 0, this.tasks.splice(index, 1)[0]);
+            }
         },
         editTask: function(index){
-            this.tasks[index].text = this.editContent;
-            this.editContent='';
+            if (this.editContent.length > 0) {
+                this.tasks[index].text = this.editContent;
+                this.editContent='';
+            }
             this.tasks[index].edit = false;
         },
         showEdit: function(index){

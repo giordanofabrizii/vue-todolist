@@ -33,7 +33,11 @@ li {
     border-radius: .4rem;
 }
 
-li > .done {
+li.done {
+    background-color: rgb(172, 252, 199);
+}
+
+li > h2.done {
     text-decoration: line-through;
 }
 

@@ -18,7 +18,7 @@
         <div class="container">
             <h1>Todo List</h1>
             <ul>
-                <li v-for="(task, index) in tasks">
+                <li v-for="(task, index) in tasks" :class="task.done === true ? 'done' : ''">
                     <h2 :class="{'done': task.done, 'notShow': task.edit}" @click="switchStatus(index)" @contextmenu="showEdit(index)">
                         {{ task.text }}
                     </h2>
