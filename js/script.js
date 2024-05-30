@@ -36,6 +36,9 @@ createApp ({
             } else {
                 console.warn('No text to add')
             }
+        },
+        switchStatus: function(index){
+            this.tasks[index].done = this.tasks[index].done == false ? true : false;
         }
     }
 }).mount('#app')

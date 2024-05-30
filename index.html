@@ -18,13 +18,13 @@
         <div class="container">
             <ul>
                 <li v-for="(task, index) in tasks">
-                    <h2 :class="task.done === true ? 'done' : ''">{{ task.text }}</h2>
+                    <h2 :class="task.done === true ? 'done' : ''" @click="switchStatus(index)">{{ task.text }}</h2>
                     <i class="fa-solid fa-toilet" @click="eliminateTask(index)"></i>
                 </li>
             </ul>
             <section>
-                <input type="text" v-model="newContent">
-                <button @click="addTask()">Aggiungi task</button>
+                <input type="text" v-model="newContent"  @keyup.enter="addTask">
+                <button @click="addTask">Aggiungi task</button>
             </section>
         </div>
     </div>
