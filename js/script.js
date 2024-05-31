@@ -61,6 +61,10 @@ createApp ({
         },
         showEdit: function(index){
             this.tasks[index].edit = true;
+            this.editContent = this.tasks[index].text;
+                this.$nextTick(() => {
+            this.$refs.editInput[index].focus();
+            });
         }
     }
 }).mount('#app')

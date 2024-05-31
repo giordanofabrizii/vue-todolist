@@ -22,11 +22,11 @@
         <div class="container">
             <h1>Todo List</h1>
             <ul v-if="tasks.length > 0">
-                <li v-for="(task, index) in tasks" :class="task.done === true ? 'done' : ''">
+                <li v-for="(task, index) in tasks" :class="task.done === true ? 'done' : ''" :key="index">
                     <h2 :class="{'done': task.done, 'notShow': task.edit}" @click="switchStatus(index)" @contextmenu="showEdit(index)">
                         {{ task.text }}
                     </h2>
-                    <input type="text" :class="task.edit === true ? 'show' : 'notShow'" @keyup.enter="editTask(index)" v-model="editContent">
+                    <input ref="editInput" id="edit-form" type="text" :class="task.edit === true ? 'show' : 'notShow'" @keyup.enter="editTask(index)" v-model="editContent">
                     <section id="options">
                         <i class="fa-solid fa-toilet-paper" @click="eliminateTask(index)"></i>
                     </section>
